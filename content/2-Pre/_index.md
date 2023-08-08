@@ -6,7 +6,7 @@ chapter: false
 pre: "<b>2. </b>"
 ---
 
-#### Các bước chuẩn bị
+#### Preparation Steps
 
 1. To perform this workshop, we need to set up the environment on Cloud9. Access **Cloud9** and select **Create environment**.
 
