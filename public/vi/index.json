@@ -1,0 +1,92 @@
+[
+{
+	"uri": "/vi/1-introduction/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Giới thiệu Trong phạm vi workshop series này, chúng ta sẽ giới thiệu các khái niệm cơ bản và lợi ích của IaC (Infrastructure as Code), so sánh các framework IaC, và các bước để làm quen với IaC.\nIaC là một phương pháp quản lý hạ tầng trong đó việc triển khai và quản lý cơ sở hạ tầng được thực hiện thông qua mã nguồn. Một trong những lợi ích lớn nhất của IaC là tăng năng suất làm việc.\nMột số lợi ích của IaC bao gồm đơn giản hóa việc quản lý hạ tầng, khả năng sử dụng lại mã nguồn, và theo dõi sự thay đổi của hạ tầng. Ví dụ, thay vì phải tạo, cấu hình và kết nối các dịch vụ trong hạ tầng một cách thủ công, bạn có thể sử dụng các mẫu CloudFormation để tự động tạo và kết nối các dịch vụ này với nhau. Khi không cần sử dụng nữa, bạn chỉ cần xóa mẫu này từ CloudFormation. Bạn cũng có thể sử dụng mẫu này để triển khai dịch vụ ở nhiều region, nhiều tài khoản khác nhau và theo dõi sự thay đổi của hạ tầng từ CloudFormation.\nNgoài ra, IaC còn mang lại nhiều lợi ích khác như tính an toàn. Ví dụ, thay vì viết policy IAM để cho phép một Lambda function có thể đọc dữ liệu từ một S3 Bucket, khi sử dụng CDK (Cloud Development Kit), bạn có thể viết bucket.grantReadOnly(lambdaFunction). CDK sẽ tự động tạo ra policy với các best practice.\nMột khía cạnh quan trọng khác của IaC là vai trò trong CI/CD và DevOps. IaC là một yêu cầu quan trọng trong các công việc liên quan đến DevOps, nơi triển khai và kiểm thử hạ tầng tự động trở nên khó khăn mà không sử dụng IaC.\nCác framework IaC Hiện có nhiều framework IaC khác nhau từ năm 2011 đến nay, bao gồm CloudFormation, CloudFormation SAM, CDK, CDK8S, được phát triển và hỗ trợ bởi AWS. Các framework này có các tính năng chung như khai báo hạ tầng bằng mã nguồn và theo dõi sự thay đổi của hạ tầng. Tuy nhiên, các framework này có sự khác nhau về công cụ triển khai hạ tầng và tích hợp với AWS. CloudFormation, SAM và CDK đều triển khai hạ tầng thông qua dịch vụ CloudFormation. Terraform, Pulumi và Serverless có các công cụ triển khai riêng và không sử dụng CloudFormation.\nĐể bắt đầu với IaC, bạn có thể làm quen với CloudFormation template bằng cách khai báo hạ tầng, tham số và bản đồ. Bạn cũng có thể quản lý sự thay đổi cấu hình và tạo các bản cập nhật thông qua CloudFormation. Ngoài ra, bạn cũng có thể triển khai cùng một stack trên nhiều tài khoản và region khác nhau bằng cách sử dụng StackSet.\nCác bước để làm quen với IaC Để làm quen với CDK, bạn cần hiểu các khái niệm trừu tượng như Construct, Stack, Props, Interface, Type và ID. Bạn cần hiểu và kiểm soát sự phụ thuộc giữa các Stack và quản lý sự thay đổi hạ tầng khi cập nhật Stack. Bạn cũng có thể phân chia một kiến trúc thành các Stack nhỏ hơn và triển khai song song nhiều Stack.\nCuối cùng, bạn có thể xây dựng và tích hợp IaC vào quy trình CI/CD.\n"
+},
+{
+	"uri": "/vi/",
+	"title": "Giới Thiệu về Infrastructure as Code",
+	"tags": [],
+	"description": "",
+	"content": "Giới Thiệu về Infrastructure as Code Trong phạm vi workshop series này, chúng ta sẽ giới thiệu các khái niệm cơ bản và lợi ích của IaC (Infrastructure as Code), so sánh các framework IaC, và các bước để làm quen với IaC.\nIaC là một phương pháp quản lý hạ tầng trong đó việc triển khai và quản lý cơ sở hạ tầng được thực hiện thông qua mã nguồn. Một trong những lợi ích lớn nhất của IaC là tăng năng suất làm việc.\n"
+},
+{
+	"uri": "/vi/5-threetierweb/5.1-deploy/",
+	"title": "Triển khai CloudFormation Stack",
+	"tags": [],
+	"description": "",
+	"content": "Triển khai CloudFormation Stack  Truy cập vào EC2 và chọn Keypair, sau đó chọn Create key pair.  Thực hiện tạo keypair. Đặt tên cho keypair chúng ta sẽ dùng để tạo CloudFormation stack.  Tạo keypair thành công.  Chúng ta truy cập vào CloudFormation   Chọn Create stack. Chọn With new resources (standard)  Thực hiện tạo stack   Chọn Template is ready Chọn Upload a template file Tải file template về tại đây Chọn Choose file và chọn file vừa tải về.  Đặt tên cho Stack name. Ví dụ: cfn-aws-three-tier-demo  Thực hiện hoàn thành các thông tin trong phần Parameters  Sau khi hoàn thành thông tin, chọn Next  Chọn Next  Kiểm tra lại và chọn Submit  Sau khi tạo thành công, chúng ta chọn Output. Sao chép giá trị WebTierLoadBalancerURL vào trình duyệt.  "
+},
+{
+	"uri": "/vi/2-pre/",
+	"title": " Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Các bước chuẩn bị  Để thực hiện bài workshop này chúng ta cần chuẩn bị môi trường trên Cloud9. Truy cập vào Cloud9 và chọn Create environment  Đặt tên cho Name. Ví dụ bài này là CloudFormation-Env  Sau đó, bạn chọn Instance type mà bạn thấy phù hợp với môi trường bạn cần dùng. Ví dụ t3.small  Tất cả giá trị còn lại để mặc định và sau đó chọn Create.  Sau khoảng 3 phút, môi trường đã tạo xong và chúng ta chọn Open.  Truy cập vào IAM, chọn Role và Create role. Sau đó chọn Next.  Tìm và chọn Permission policy là AdministratorAccess.  Sau đó, chúng ta chọn Next.  Đặt tên Role. Ví dụ: IaC-Role  Kiểm tra lại một lần nữa và chọn Create role.  Quay lại giao diện Cloud9, bạn chọn Manage EC2 instance.   Bạn sẽ được chuyển hướng đến trang EC2 và chọn Actions\n Chọn Security Chọn Modify IAM role    Chúng ta sẽ chọn Role vừa tạo và chọn Update IAM role.  Bạn phải clone tài nguyên từ repository:  git clone https://github.com/AWS-First-Cloud-Journey/CloudFormation-series.git\r"
+},
+{
+	"uri": "/vi/5-threetierweb/5.2-webtier/",
+	"title": "Kiểm tra truy cập Web Tier",
+	"tags": [],
+	"description": "",
+	"content": "Kiểm tra truy cập Web Tier  Sau khi tạo thành công, chúng ta chọn Output. Sao chép giá trị WebTierLoadBalancerURL vào trình duyệt.  Trên trình duyệt, chúng ta sẽ thấy dòng chữ This Amazon EC2 instance is located in Availability Zone: us-east-1a  Sau đó bạn có thể tải lại trang sẽ đổi AZ khác: This Amazon EC2 instance is located in Availability Zone: us-east-1b  Quay lại phần Output sao chép giá trị của BastionHostIP  Thực hiện SSH vào Bastion Host dựa vào keypair và IP vừa sao chép.  SSH thành công.  Tạo file cfn-keypair.pem và sao chép nội dung key từ máy tính cá nhân, sau đó lưu lại bằng lệnh :wq!  Thực hiện trung gian ssh vào Web tier EC2 instance qua các lệnh sao:  chmod 400 \u0026lt;path_key_pair\u0026gt; ssh -i \u0026lt;path_to_key_pair\u0026gt; ec2-user@\u0026lt;web_tier_ec2_private_ip\u0026gt;\r"
+},
+{
+	"uri": "/vi/5-threetierweb/5.3-applicationtier/",
+	"title": "Kiểm tra truy cập Application Tier",
+	"tags": [],
+	"description": "",
+	"content": "Kiểm tra truy cập Application Tier  Kiểm tra truy cập vào Application Tier qua lệnh sau:  curl \u0026lt;AppTierLoadBalancerURL\u0026gt; Thực hiện curl địa chỉ Private IP của EC2 ở Application tier từ Web tier. Chúng ta sẽ thấy kết quả không thể.  curl -m 10 \u0026lt;app_tier_ec2_private_ip\u0026gt;\rThử kiểm tra một TCP ping qua nping để xem chúng ta có thể nhận được phản hồi trên cổng TCP 80 hoặc 22 không?  nping -p 22 \u0026lt;app_tier_ec2_private_ip\u0026gt;\rPort 80:  nping -p 80 \u0026lt;app_tier_ec2_private_ip\u0026gt;\r"
+},
+{
+	"uri": "/vi/3-createlambda/",
+	"title": "Tạo Lambda function",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Lambda function Giải thích CloudFormation template:   AWSTemplateFormatVersion: Đây chỉ định phiên bản của định dạng file template AWS CloudFormation được sử dụng (2010-09-09 trong trường hợp này).\n  Description: Đây là mô tả ngắn gọn về file template.\n  Resources: Phần này xác định các nguồn tài nguyên cần tạo trong CF.\n  LambdaRole: Đây là tài nguyên AWS::IAM::Role để xác định role cho hàm Lambda. Nó định nghĩa một role có tên \u0026ldquo;lambda-role\u0026rdquo; và xác định policy cho role đó.\n  LambdaFunctionDemo: Đây là tài nguyên AWS::Lambda::Function để tạo hàm Lambda. Nó đặt tên hàm là \u0026ldquo;CfnLambdaDemo\u0026rdquo; và xác định các thuộc tính khác như handler, mã nguồn, runtime, kích thước bộ nhớ, thời gian chờ, và role.\n  Outputs: Phần này xác định các giá trị đầu ra của CloudFormation template.\n  LambdaRoleArn: Đây là một giá trị đầu ra để cung cấp ARN (Amazon Resource Name) của role LambdaRole.\n  LambdaFunctionName: Đây là một giá trị đầu ra để cung cấp tên của hàm Lambda (LambdaFunctionDemo).\n  File template này tạo ra một role IAM và một hàm Lambda, và cung cấp các giá trị đầu ra để sử dụng trong các quy trình tiếp theo hoặc trong cấu hình hệ thống.\n   Sau khi clone về chúng ta sẽ đến đúng đường dẫn các template CloudFormation.  cd CloudFormation-series\rcd day-1\rBạn xem qua file yaml là template để tạo Lambda Function.  Thực hiện tạo Lambda Function bằng lệnh sau:  aws cloudformation create-stack \\\r--stack-name cfn-lambda-demo \\\r--template-body file://lambda.yaml \\\r--capabilities CAPABILITY_NAMED_IAM\rSau khoảng 5 phút. CloudFormation stack tạo thành công.  Truy cập vào giao diện CloudFormation, kiểm tra CloudFormation stack và xem các Event.  Kiểm tra phần Resources đã tạo ra là LambdaFunctionDemo và LambdaRole.  Kiểm tra phần Output  Truy cập vào Lambda, chúng ta sẽ thấy LambdaFunction đã được tạo.  Truy cập vào Lambda Function, chọn Test và thực hiện Test event.  Thực hiện tạo Create new event và Event name  Sau khi test bạn sẽ thấy Log output  "
+},
+{
+	"uri": "/vi/5-threetierweb/5.4-databasetier/",
+	"title": "Kiểm tra truy cập Database Tier",
+	"tags": [],
+	"description": "",
+	"content": "Kiểm tra truy cập Database Tier  Kiểm tra và ghi chứ lại Database Endpoint.  Kết nối vào EC2 của Web tier:  ssh -i \u0026lt;path_to_key_pair\u0026gt; ec2-user@\u0026lt;web_tier_ec2_private_ip\u0026gt;\r Sau đó truy cập vào Database:  mysql --host=\u0026lt;database_endpoint_address\u0026gt; --user=\u0026lt;admin_name\u0026gt; --password=\u0026lt;password\u0026gt;\rQuay lại session SSH vào Bastion Host thực hiện lệnh:  nping -p 3306 \u0026lt;database_endpoint_address\u0026gt;\rKiểm tra database  Kiểm tra phần networking của database.  Kiểm tra Mutil-AZ của Database.  "
+},
+{
+	"uri": "/vi/4-createvpc/",
+	"title": "Tạo VPC và EC2",
+	"tags": [],
+	"description": "",
+	"content": "Tạo VPC và EC2 Giải thích CloudFormation template Template này tạo ra một EC2 instance trong một VPC và cho phép truy cập vào instance thông qua AWS Systems Manager (SSM). Dưới đây là mô tả chi tiết của các phần trong template:\n AWSTemplateFormatVersion: Phiên bản của template format. Description: Mô tả ngắn về template. Parameters: Định nghĩa các tham số (parameters) có thể được sử dụng để tùy chỉnh quá trình triển khai. InstanceType: Tham số để chỉ định loại EC2 instance. Mặc định là \u0026ldquo;t2.small\u0026rdquo;, và chỉ cho phép giá trị \u0026ldquo;t2.small\u0026rdquo; hoặc \u0026ldquo;t2.medium\u0026rdquo;. Mappings: Định nghĩa các ánh xạ (mappings) giữa các giá trị. Trong trường hợp này, ánh xạ được sử dụng để ánh xạ giữa loại instance EC2 và image ID tương ứng. Resources: Định nghĩa các nguồn (resources) mà template tạo ra. VPC: Tạo một VPC (Virtual Private Cloud). Subnet: Tạo một subnet trong VPC. InternetGateway: Tạo một Internet Gateway để kết nối VPC với Internet. AttachGateway: Gắn Internet Gateway với VPC. RouteTable: Tạo một Route Table cho VPC. Route: Thêm một route trong Route Table để cho phép traffic ra Internet thông qua Internet Gateway. SubnetRouteTableAssociation: Liên kết subnet với Route Table. InstanceSecurityGroup: Tạo một Security Group để quản lý các luồng dữ liệu và quy tắc bảo mật cho instance EC2. RoleForEC2: Tạo một IAM role để gán cho instance EC2, cho phép nó truy cập vào các dịch vụ AWS. InstanceProfile: Tạo một Instance Profile để kết hợp với instance EC2, cho phép nó sử dụng IAM role đã tạo. WebServeerInstance: Tạo một EC2 instance sử dụng các thông số đã chỉ định và liên kết với VPC, Subnet, Security Group, và IAM role đã tạo. Template này tạo ra một môi trường đơn giản để triển khai một EC2 instance trong một VPC và cho phép truy cập vào instance thông qua SSM. Bằng cách triển khai template này, bạn có thể tự động tạo và cấu hình một môi trường EC2 một cách nhất quán.   Sau phần đầu chúng ta sử dụng CloudFormation tạo Lambda function thì phần tiếp theo chúng ta sẽ tạo hạ tầng về networking (VPC và các thành phần của VPC) cùng với EC2 và role dành cho SSM. Quan sát template tạo tài nguyên.  Di chuyển đến thư mục chứa template và dùng lệnh sau để triển khai stack:  aws cloudformation create-stack \\\r--stack-name cfn-vpc-demo \\\r--template-body file://vpc.yaml \\\r--parameters ParameterKey=InstanceType,ParameterValue=t2.medium \\\r--capabilities CAPABILITY_NAMED_IAM\rSau 5 phút, bạn có thể kiểm tra giao diện CloudFormation và Event tạo tài nguyên.  Kiểm tra phần Resources đã tạo.  Bạn kiểm tra giao diện EC2 sẽ có 1 instance mới tạo.   Chọn Connect  Trong giao diện Connect to instance, chọn Session Manager và chọn Connect.  Session mới mở ra và bạn thử ping tới một trang bằng lệnh:  ping amazon.com -c5\r"
+},
+{
+	"uri": "/vi/5-threetierweb/",
+	"title": "Triển khai Three-Tier Architecture",
+	"tags": [],
+	"description": "",
+	"content": "Triển khai Three-Tier Architecture Kiến trúc 3 lớp cung cấp một khung việc tổ chức tổng quát cho việc triển khai các ứng dụng client/server truyền thống thành ba lớp logic: lớp Web, lớp Ứng dụng và lớp Cơ sở dữ liệu. Người dùng cuối tương tác với lớp Web (ví dụ: ứng dụng di động, trang web, v.v.), lớp này cung cấp giao diện người dùng cho họ để xem, sửa đổi hoặc gửi thông tin. Lớp Ứng dụng chịu trách nhiệm xử lý các yêu cầu được thực hiện bởi người dùng. Nó hỗ trợ dịch các hành động của người dùng thành logic kinh doanh cho phép xử lý dữ liệu bởi các chương trình. Cuối cùng, lớp Cơ sở dữ liệu hoặc lớp Dữ liệu là nơi lưu trữ và quản lý thông tin được xử lý bởi ứng dụng.\nTriển khai Web Tier  2 public subnets Public route table Internet Gateway \u0026amp; NAT Gateway Internet facing Application Load Balancer với một Security Group cho phép lưu lượng đi ra Internet. Ít nhất 2 EC2 instance với Auto Scaling Group. EC2 Security Group cho phép lưu lượng đi đến Web Tier Application Load Balancer Boot strap static web page. Tạo public route table và liên kết với 2 public subnets.  Triển khai Application Tier  2 private subnets Private route table Internal Application Load Balancer với một Security Group cho phép đi từ EC2 instances trong Web Tier Ít nhất 2 EC2 instance với Auto Scaling Group. EC2 Security Group cho phép inbound lưu lượng đi đến Application Tier Application Load Balancer Liên kết với private route table  Triển khai Database Tier  2 private subnets Public route table MySql RDS Database với Multi AZ standby instance Database Security Group cho phép lưu lượng từ MySQL đến Application Server Security Group  Triển khai Bastion Host  3 public subnet Public route table EC2 instance EC2 Security Group cho phép SSH từ Internet Cho phép Bastion Host EC2 instance Security Group truy cập tài nguyên trong Web, Application, và Database Tier  Nội dung chính:  Triển khai CloudFormation Stack Kiểm tra truy cập vào Web Tier Kiểm tra truy cập vào Application Tier Kiểm tra Database Tier  "
+},
+{
+	"uri": "/vi/6-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Dọn dẹp tài nguyên Xóa CloudFormation Lambda stack aws cloudformation delete-stack \\\r--stack-name cfn-lambda-demo\rXóa CloudFormation VPC stack  aws cloudformation delete-stack \\\r--stack-name cfn-vpc-demo "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
